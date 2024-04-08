@@ -49,7 +49,7 @@ class EL_Local(Node):
         plt.savefig(filename)
 
     def get_neighbors(self, node=None):
-        return set(self.rng.sample(self.my_neighbors, self.degree))
+        return set(self.rng.sample(list(self.my_neighbors), self.degree))
 
     def receive_DPSGD(self):
         return self.receive_channel("DPSGD", block=False)
